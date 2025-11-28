@@ -1,7 +1,12 @@
 const { defineConfig } = require("cypress");
+
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "https://example.com",
-    setupNodeEvents(on, config) {}
+    // Set your real site URL here
+    baseUrl: "https://automationteststore.com/",
+
+    setupNodeEvents(on, config) {
+      // you can add tasks or plugins here if needed
+    }
   }
 });
