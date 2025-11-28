@@ -1,0 +1,1 @@
+class ContactUsPage{visit(){cy.visit('/contactus');}};module.exports=new ContactUsPage();

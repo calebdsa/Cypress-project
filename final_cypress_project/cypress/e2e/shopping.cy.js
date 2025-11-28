@@ -1,0 +1,1 @@
+const S=require('../pages/ShoppingPage');describe('shop',()=>{it('ok',()=>{S.visit();});});

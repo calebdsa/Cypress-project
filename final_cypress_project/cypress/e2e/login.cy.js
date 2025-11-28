@@ -1,0 +1,1 @@
+const L=require('../pages/LoginPage');describe('login',()=>{it('ok',()=>{L.visit();});});

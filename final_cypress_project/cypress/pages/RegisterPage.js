@@ -1,0 +1,1 @@
+class RegisterPage{visit(){cy.visit('/register');}};module.exports=new RegisterPage();

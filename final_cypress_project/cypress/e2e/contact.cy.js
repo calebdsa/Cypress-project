@@ -1,0 +1,1 @@
+const C=require('../pages/ContactUsPage');describe('contact',()=>{it('ok',()=>{C.visit();});});

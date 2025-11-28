@@ -1,0 +1,1 @@
+class ShoppingPage{visit(){cy.visit('/shop');}};module.exports=new ShoppingPage();

@@ -1,0 +1,1 @@
+const R=require('../pages/RegisterPage');describe('register',()=>{it('ok',()=>{R.visit();});});
