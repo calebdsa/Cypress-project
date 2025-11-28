@@ -1,17 +1,13 @@
 name: Cypress Daily Run
 
 on:
+  workflow_dispatch:      # Manual trigger
   schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
+    - cron: "0 0 * * *"   # Runs daily at midnight
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: ./final_cypress_project
 
     steps:
       - name: Checkout repository
@@ -23,14 +19,16 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd final_cypress_project
+          npm install
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
+          working-directory: final_cypress_project
           browser: chrome
           headless: true
-          working-directory: ./final_cypress_project
 
       - name: Upload videos
         if: always()
