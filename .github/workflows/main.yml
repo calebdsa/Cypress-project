@@ -1,13 +1,47 @@
-name: Cypress Manual
+name: Cypress Daily Run
+
 on:
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
+
 jobs:
-  cypress:
+  cypress-run:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./final_cypress_project
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm install
-      - run: npx cypress run
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          headless: true
+          working-directory: ./final_cypress_project
+
+      - name: Upload videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: final_cypress_project/cypress/videos/
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: final_cypress_project/cypress/screenshots/
