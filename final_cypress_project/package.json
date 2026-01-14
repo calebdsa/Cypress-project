@@ -1,11 +1,40 @@
 {
   "name": "final-cypress-project",
-  "version": "1.0.0",
-  "devDependencies": {
-    "cypress": "^13.0.0"
-  },
+  "version": "2.0.0",
+  "description": "Enhanced Cypress Automation Framework with Page Object Model",
+  "main": "cypress.config.js",
   "scripts": {
     "test": "cypress run",
-    "cy:open": "cypress open"
+    "test:open": "cypress open",
+    "test:headless": "cypress run --headless",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge",
+    "test:login": "cypress run --spec 'cypress/e2e/login.cy.js'",
+    "test:register": "cypress run --spec 'cypress/e2e/register.cy.js'",
+    "test:shopping": "cypress run --spec 'cypress/e2e/shopping.cy.js'",
+    "test:contact": "cypress run --spec 'cypress/e2e/contact.cy.js'",
+    "test:dev": "CYPRESS_ENV=dev cypress run",
+    "test:staging": "CYPRESS_ENV=staging cypress run",
+    "test:prod": "CYPRESS_ENV=production cypress run",
+    "lint": "eslint cypress/**/*.js",
+    "clean": "rm -rf cypress/videos cypress/screenshots"
+  },
+  "keywords": [
+    "cypress",
+    "e2e",
+    "testing",
+    "automation",
+    "page-object-model"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "eslint": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }

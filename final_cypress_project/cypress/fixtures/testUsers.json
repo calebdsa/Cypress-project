@@ -1,0 +1,30 @@
+{
+  "validUser": {
+    "email": "testuser@example.com",
+    "loginname": "testuser",
+    "password": "Test1234",
+    "firstName": "Test",
+    "lastName": "User"
+  },
+  "newUser": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "SecurePass123",
+    "phone": "1234567890",
+    "address1": "123 Test Street",
+    "city": "Test City",
+    "country": "United States",
+    "state": "California",
+    "zipcode": "12345"
+  },
+  "invalidUser": {
+    "email": "invalid@example.com",
+    "password": "wrongpassword"
+  },
+  "contactForm": {
+    "name": "Contact Tester",
+    "email": "contact@example.com",
+    "enquiry": "This is a test enquiry message for automation testing."
+  }
+}
